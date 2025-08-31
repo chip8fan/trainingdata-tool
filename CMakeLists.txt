@@ -3,8 +3,6 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-set(CMAKE_REQUIRED_FLAGS -std=c++17)
-
 file(GLOB_RECURSE sources src/*.cpp src/*.h)
 
 set (
@@ -38,7 +36,7 @@ set_target_properties(trainingdata-tool PROPERTIES
 )
 
 if (UNIX)
-    target_link_libraries(trainingdata-tool -lpthread -lstdc++fs)
+    target_link_libraries(trainingdata-tool PRIVATE pthread)
 endif(UNIX)
 
 find_package(Boost 1.65.0)
