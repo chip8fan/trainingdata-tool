@@ -11,9 +11,9 @@
 #include "TrainingDataReader.h"
 #include "TrainingDataWriter.h"
 
-size_t max_files_per_directory = 10000;
-int64_t max_games_to_convert = 10000000;
-size_t chunks_per_file = 4096;
+size_t max_files_per_directory = 1000000000;
+int64_t max_games_to_convert = 1000000000;
+size_t chunks_per_file = 10000;
 size_t dedup_uniq_buffersize = 50000;
 float dedup_q_ratio = 1.0f;
 
