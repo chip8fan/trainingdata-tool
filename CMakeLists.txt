@@ -37,9 +37,11 @@ set_target_properties(trainingdata-tool PROPERTIES
     CXX_EXTENSIONS ON
 )
 
-if (UNIX)
+if (APPLE)
+    target_link_libraries(trainingdata-tool -lpthread)
+elseif (UNIX)
     target_link_libraries(trainingdata-tool -lpthread -lstdc++fs)
-endif(UNIX)
+endif()
 
 find_package(Boost 1.65.0)
 
