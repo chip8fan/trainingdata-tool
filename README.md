@@ -10,10 +10,23 @@ git submodule sync --recursive
 git submodule update --recursive --init
 ```
 
+After doing that step, remove the zlib folder and git clone the latest version of zlib. Then, in zlib/gzread.c, zlib/gzwrite.c, and zlib/gzlib.c, add the following import at the beginning.
+
+```
+#include "unistd.h"
+```
+
 In order to build CMake and Boost libraries are required. To install on Ubuntu, run the following command:
 
 ```
 sudo apt-get update && sudo apt-get install -y cmake libboost-all-dev
+```
+
+And to install on Mac, run the following commands:
+
+```
+brew install boost
+brew install cmake
 ```
 
 After submodules are cloned and all dependencies are installed build the project by running:
